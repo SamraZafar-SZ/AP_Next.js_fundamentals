@@ -1,0 +1,29 @@
+import data from '../../../data/movies.json';
+
+export async function getStaticPaths() {
+  const paths = data.movies.map((movie) => ({
+    params: { id: movie.id.toString() },
+  }));
+  return { paths, fallback: 'blocking' };
+}
+
+export async function getStaticProps({ params }) {
+  const movie = data.movies.find((m) => m.id.toString() === params.id);
+  if (!movie) return { notFound: true };
+
+  const director = data.directors.find((d) => d.id === movie.directorId);
+
+  return {
+    props: { director },
+    revalidate: 60,
+  };
+}
+
+export default function DirectorPage({ director }) {
+  return (
+    <div>
+      <h1>Director: {director.name}</h1>
+      <p>{director.biography}</p>
+    </div>
+  );
+}
