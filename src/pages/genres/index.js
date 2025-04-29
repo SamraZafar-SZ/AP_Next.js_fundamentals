@@ -12,28 +12,28 @@ export async function getServerSideProps() {
 
 export default function Genres({ genres, movies }) {
   return (
-    <div>
-      <h1>Genres</h1>
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-6">Genres</h1>
       {genres.map((genre) => {
         const genreMovies = movies.filter(
           (movie) => movie.genreId === genre.id
         );
 
         return (
-          <div key={genre.id} style={{ marginBottom: '2rem' }}>
-            <h2>
-              <Link href={`/genres/${genre.id}`}>{genre.name}</Link>
+          <div key={genre.id} className="mb-8">
+            <h2 className="text-xl font-semibold">
+              <Link href={`/genres/${genre.id}`} className="text-blue-600 hover:underline">{genre.name}</Link>
             </h2>
             {genreMovies.length > 0 ? (
-              <ul>
+              <ul className="mt-2 list-disc list-inside">
                 {genreMovies.map((movie) => (
                   <li key={movie.id}>
-                    <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+                    <Link href={`/movies/${movie.id}`} className="text-blue-600 hover:underline">{movie.title}</Link>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p>No movies in this genre.</p>
+              <p className="mt-2 text-gray-600">No movies in this genre.</p>
             )}
           </div>
         );

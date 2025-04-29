@@ -24,18 +24,18 @@ export async function getStaticProps({ params }) {
 
 export default function GenreDetail({ genre, movies }) {
   return (
-    <div>
-      <h1>{genre.name} Movies</h1>
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-6">{genre.name} Movies</h1>
       {movies.length > 0 ? (
-        <ul>
+        <ul className="list-disc list-inside">
           {movies.map((movie) => (
-            <li key={movie.id}>
-              <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
+            <li key={movie.id} className="mb-2">
+              <Link href={`/movies/${movie.id}`} className="text-blue-600 hover:underline">{movie.title}</Link>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No movies found.</p>
+        <p className="text-gray-600">No movies found.</p>
       )}
     </div>
   );

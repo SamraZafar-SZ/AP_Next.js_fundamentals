@@ -21,9 +21,9 @@ export async function getStaticProps({ params }) {
 
 export default function DirectorPage({ director }) {
   return (
-    <div>
-      <h1>Director: {director.name}</h1>
-      <p>{director.biography}</p>
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4">Director: {director.name}</h1>
+      <p className="text-gray-700">{director.biography}</p>
     </div>
   );
 }

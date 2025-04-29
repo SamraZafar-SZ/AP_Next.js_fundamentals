@@ -27,13 +27,26 @@ export async function getStaticProps({ params }) {
 
 export default function MovieDetail({ movie, genre, director }) {
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <p><strong>Description:</strong> {movie.description}</p>
-      <p><strong>Genre:</strong> {genre}</p>
-      <p><strong>Release Year:</strong> {movie.releaseYear}</p>
-      <p><strong>Rating:</strong> {movie.rating}</p>
-      <Link href={`/movies/${movie.id}/director`}>Director Info</Link>
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4">{movie.title}</h1>
+      <p className="mb-2">
+        <span className="font-semibold">Description:</span> {movie.description}
+      </p>
+      <p className="mb-2">
+        <span className="font-semibold">Genre:</span> {genre}
+      </p>
+      <p className="mb-2">
+        <span className="font-semibold">Release Year:</span> {movie.releaseYear}
+      </p>
+      <p className="mb-4">
+        <span className="font-semibold">Rating:</span> {movie.rating}
+      </p>
+      <Link
+        href={`/movies/${movie.id}/director`}
+        className="text-blue-600 hover:underline font-medium"
+      >
+        Director Info
+      </Link>
     </div>
   );
 }
