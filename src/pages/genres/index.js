@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import data from '../../data/movies.json';
+import MovieCard from '@/components/MovieCard';
 
 export async function getServerSideProps() {
   return {
@@ -27,9 +28,10 @@ export default function Genres({ genres, movies }) {
             {genreMovies.length > 0 ? (
               <ul className="mt-2 list-disc list-inside">
                 {genreMovies.map((movie) => (
-                  <li key={movie.id}>
-                    <Link href={`/movies/${movie.id}`} className="text-blue-600 hover:underline">{movie.title}</Link>
-                  </li>
+                  <>
+                  <MovieCard key={movie.id} movie={movie} />
+                  <br></br>
+                  </>
                 ))}
               </ul>
             ) : (

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import data from '../../data/movies.json';
+import MovieCard from '@/components/MovieCard';
+
 
 export async function getStaticPaths() {
   const paths = data.genres.map((genre) => ({
@@ -29,9 +31,10 @@ export default function GenreDetail({ genre, movies }) {
       {movies.length > 0 ? (
         <ul className="list-disc list-inside">
           {movies.map((movie) => (
-            <li key={movie.id} className="mb-2">
-              <Link href={`/movies/${movie.id}`} className="text-blue-600 hover:underline">{movie.title}</Link>
-            </li>
+            <>
+                  <MovieCard key={movie.id} movie={movie} />
+                  <br></br>
+                  </>
           ))}
         </ul>
       ) : (

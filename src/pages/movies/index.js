@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import data from '../../data/movies.json';
+import MovieCard from '@/components/MovieCard';
 
 export async function getStaticProps() {
   return {
@@ -18,7 +19,7 @@ export default function Movies({ movies, genres }) {
   const filteredMovies =
     selectedGenre === 'all'
       ? movies
-      : movies.filter((m) => m.genreId === parseInt(selectedGenre));
+      : movies.filter((m) => m.genreId === selectedGenre);
 
   return (
     <div className="p-8">
@@ -38,11 +39,7 @@ export default function Movies({ movies, genres }) {
 
       <ul className="space-y-2">
         {filteredMovies.map((movie) => (
-          <li key={movie.id}>
-            <Link href={`/movies/${movie.id}`} className="text-blue-600 hover:underline">
-              {movie.title}
-            </Link>
-          </li>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </ul>
     </div>
