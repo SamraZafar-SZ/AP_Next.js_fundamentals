@@ -29,9 +29,17 @@ export default function Home({ trendingMovies }) {
       </>
     ))}
   </ul>
-  <button className={styles.button} onClick={() => router.push('/genres')}>
-    Browse Genres
-  </button>
+  <br>
+  </br><br></br>
+  {/* Navigation Buttons */}
+  <div className="flex flex-wrap gap-4 mb-6">
+    <Link href="/directors"><button className={styles.button}>Directors</button></Link>
+    <Link href="/genres"><button className={styles.button}>Genres</button></Link>
+    <Link href="/movies"><button className={styles.button}>All Movies</button></Link>
+    <Link href="/help/faq"><button className={styles.button}>FAQ</button></Link>
+    <Link href="/help/contact"><button className={styles.button}>Contact</button></Link>
+    
+  </div>
 </div>
 
   );
