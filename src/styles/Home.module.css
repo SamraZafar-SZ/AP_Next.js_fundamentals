@@ -1,53 +1,96 @@
+/* Home.module.css */
+
+/* Container Style */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: #111;
-    text-align: center;
-  }
-  
-  .list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-  }
-  
-  .listItem {
-    margin: 0.5rem 0;
-  }
-  
-  .link {
-    text-decoration: none;
-    color: #0070f3;
-    font-weight: 500;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .link:hover {
-    color: #0051a3;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #0051a3;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title Style */
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111; /* Default text color */
+  text-align: center;
+}
+
+/* List Style */
+.list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+/* List Item Style */
+.listItem {
+  margin: 0.5rem 0;
+}
+
+/* Link Style */
+.link {
+  text-decoration: none;
+  color: #0070f3;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: #0051a3;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0051a3;
+}
+
+/* Dark Mode Styles */
+html.dark .title {
+  color: #f5f5f5; /* Light text color in dark mode */
+}
+
+html.dark .button {
+  background-color: #333; /* Darker button background */
+  color: white;
+}
+
+html.dark .button:hover {
+  background-color: #555; /* Darker button hover */
+}
+
+html.dark .link {
+  color: #80b3ff; /* Lighter link color */
+}
+
+html.dark .link:hover {
+  color: #99c2ff; /* Lighter hover color */
+}
+
+html.dark .container {
+  background-color: #121212; /* Dark background color */
+  color: #f5f5f5; /* Light text color */
+}
+
+html.dark .listItem {
+  color: #e0e0e0; /* Lighter text color for list items */
+}
+
+/* Specific Dark Mode Changes to the Title */
+html.dark .title {
+  color: #f5f5f5; /* Ensure title color is light in dark mode */
+}

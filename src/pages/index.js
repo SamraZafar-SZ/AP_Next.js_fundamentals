@@ -6,6 +6,7 @@ import data from '../data/movies.json';
 import { useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import MovieCard from '@/components/MovieCard';
+import Header from '@/components/Header';
 
 export async function getStaticProps() {
   const trendingMovies = data.movies.slice(0, 5); // Take first 5 as trending
@@ -20,6 +21,7 @@ export default function Home({ trendingMovies }) {
 
   return (
     <div className={styles.container}>
+      <Header />
   <h1 className={styles.title}>Trending Movies</h1>
   <ul className={styles.list}>
     {trendingMovies.map((movie) => (

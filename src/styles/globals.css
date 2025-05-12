@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
+/* globals.css */
+
+/* Default light theme */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* Custom fonts (if needed) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,6 +16,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode styles triggered by system preference */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +24,21 @@
   }
 }
 
+/* Applying background and foreground globally */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Manual dark mode toggle via the `dark` class */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Other possible customizations based on dark mode */
+.dark body {
+  background: var(--background);
+  color: var(--foreground);
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import data from '../../data/movies.json';
+import Header from '@/components/Header';
 
 export async function getStaticPaths() {
   const paths = data.movies.map((movie) => ({
@@ -28,6 +29,7 @@ export async function getStaticProps({ params }) {
 export default function MovieDetail({ movie, genre, director }) {
   return (
     <div className="p-8">
+      <Header /> <br/>
       <h1 className="text-3xl font-bold mb-4">{movie.title}</h1>
       <p className="mb-2">
         <span className="font-semibold">Description:</span> {movie.description}

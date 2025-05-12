@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import data from '../../data/movies.json';
 import MovieCard from '@/components/MovieCard';
+import Header from '@/components/Header';
 
 export async function getServerSideProps() {
   return {
@@ -14,6 +15,8 @@ export async function getServerSideProps() {
 export default function Genres({ genres, movies }) {
   return (
     <div className="p-8">
+      <Header />
+      <br/>
       <h1 className="text-3xl font-bold mb-6">Genres</h1>
       {genres.map((genre) => {
         const genreMovies = movies.filter(

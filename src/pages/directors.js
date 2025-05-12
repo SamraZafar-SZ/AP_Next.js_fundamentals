@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import Link from 'next/link';
 import styles from '@/styles/Directors.module.css';
+import Header from '@/components/Header';
 
 // Fetcher function for useSWR
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -14,7 +15,9 @@ export default function Directors() {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Directors</h1>
+      <Header />
+      <br/>
+      <h1 className="text-3xl font-bold mb-4">Directors</h1>
       {data.map((director) => (
         <div key={director.id} style={{ marginBottom: '2rem', padding: '1rem', border: '1px solid #ccc' }}>
           <h2>{director.name}</h2>

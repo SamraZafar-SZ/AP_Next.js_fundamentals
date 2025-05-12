@@ -1,4 +1,5 @@
 import data from '../../../data/movies.json';
+import Header from '@/components/Header';
 
 export async function getStaticPaths() {
   const paths = data.movies.map((movie) => ({
@@ -14,6 +15,7 @@ export async function getStaticProps({ params }) {
   const director = data.directors.find((d) => d.id === movie.directorId);
 
   return {
+    
     props: { director },
     revalidate: 60,
   };

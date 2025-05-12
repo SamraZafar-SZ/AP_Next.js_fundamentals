@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import data from '../../data/movies.json';
 import MovieCard from '@/components/MovieCard';
+import Header from '@/components/Header';
 
 export async function getStaticProps() {
   return {
@@ -23,6 +24,8 @@ export default function Movies({ movies, genres }) {
 
   return (
     <div className="p-8">
+      <Header />
+      <br/>
       <h1 className="text-3xl font-bold mb-4">All Movies</h1>
 
       <select

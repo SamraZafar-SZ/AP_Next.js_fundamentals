@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import data from '../../data/movies.json';
 import MovieCard from '@/components/MovieCard';
+import Header from '@/components/Header';
 
 
 export async function getStaticPaths() {

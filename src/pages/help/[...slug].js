@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Header from '@/components/Header';
 
 const HelpPage = () => {
   const router = useRouter();
@@ -9,12 +10,13 @@ const HelpPage = () => {
     if (slug.length === 0) {
       return (
         <div>
-          <h1>Help Center</h1>
+          <Header />
+          <h1 className="text-3xl font-bold mb-6">Help Center</h1>
           <p>Welcome to the Help Center. Choose a topic below:</p>
           <ul>
-            <li><Link href="/help/faqs">FAQs</Link></li>
-            <li><Link href="/help/contact">Contact</Link></li>
-            <li><Link href="/help/privacy">Privacy Policy</Link></li>
+            <li><Link href="/help/faqs" className="text-blue-600 hover:underline">FAQs</Link></li>
+            <li><Link href="/help/contact" className="text-blue-600 hover:underline">Contact</Link></li>
+            <li><Link href="/help/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link></li>
           </ul>
         </div>
       );
@@ -34,7 +36,9 @@ const HelpPage = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Help Page</h1>
+      <Header />
+      <br/>
+      <h1 className="text-3xl font-bold mb-6">Help Page</h1>
       {renderContent()}
       <div className="mt-6">
         <h3 className="text-xl font-semibold">Quick Links:</h3>
